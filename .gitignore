@@ -14,7 +14,7 @@
 /.phpcs-cache
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
-lokal.mk
+local.mk
 
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
