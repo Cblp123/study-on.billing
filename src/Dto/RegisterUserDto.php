@@ -6,14 +6,14 @@ use App\Entity\User;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[UniqueEntity(fields: ['email'], message: 'пользователь с таким email уже существует', entityClass: User::class)]
+#[UniqueEntity(fields: ['email'], message: 'Пользователь с таким email уже существует', entityClass: User::class)]
 final class RegisterUserDto
 {
-    #[Assert\NotBlank(message: 'вапррп.')]
-    #[Assert\Email(message: 'Invalid email address.')]
+    #[Assert\NotBlank(message: 'Поле email не может быть пустым.')]
+    #[Assert\Email(message: 'Неверный формат email.')]
     public string $email;
 
-    #[Assert\NotBlank(message: 'Password should not be blank.')]
-    #[Assert\Length(min: 6, minMessage: 'Password should be at least {{ limit }} characters long.')]
+    #[Assert\NotBlank(message: 'Пароль не может быть пустым')]
+    #[Assert\Length(min: 6, minMessage: 'Пароль должен содержать не менее {{ limit }} символов.')]
     public string $password;
 }
