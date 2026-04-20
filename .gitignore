@@ -24,3 +24,4 @@ local.mk
 /phpunit.xml
 /.phpunit.cache/
 ###< phpunit/phpunit ###
+.gitattributes
