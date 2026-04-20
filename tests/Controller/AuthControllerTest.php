@@ -44,4 +44,14 @@ class AuthControllerTest extends WebTestCase
 
         self::assertResponseStatusCodeSame(401);
     }
+
+    public function testAuthFailNotValidJson(): void
+    {
+        $client = static::createClient();
+
+        $client->jsonRequest('POST', '/api/v1/auth', [
+        ]);
+
+        self::assertResponseStatusCodeSame(400);
+    }
 }
